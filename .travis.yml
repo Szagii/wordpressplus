@@ -1,0 +1,25 @@
+language: php
+
+php:
+  - 5.6
+  - 7.0
+  - hhvm
+
+env:
+  global:
+    - setup=basic
+
+sudo: false
+
+install:
+  - composer self-update
+  - composer install --no-interaction --prefer-dist
+
+before_script:
+  - cp .env.travis .env
+
+script:
+  - vendor/bin/phpunit
+
+notifications:
+  slack: geekpavilion:dlWpqIWmVxsQWJ6WLY6Z7Vb0

@@ -1,0 +1,8 @@
+/lumen.log
+/node_modules
+/vendor
+/.env
+/.env.production
+/.php_cs.cache
+/deploy
+/wordpress/wp-content/debug.log

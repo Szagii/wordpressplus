@@ -1,0 +1,7 @@
+*
+!.gitignore
+!index.php
+!hello.php
+!akismet
+!wp-multibyte-patch
+!advanced-custom-fields
