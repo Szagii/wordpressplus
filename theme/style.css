@@ -1,0 +1,244 @@
+.nav {
+  position: absolute;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+}
+
+.logo {
+  font-size: 40px;
+  color: white;
+}
+
+.nav-item {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: 10px;
+  color: white;
+}
+
+.nav-item a, a.nav-item {
+  color: #ffffff;
+}
+
+.nav2 {
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  height: 80px;
+  padding: 30px;
+}
+
+.nav-item2 {
+  color: #4a4a4a;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: 10px;
+}
+
+.telephone {
+  position: absolute;
+  float: right;
+  margin-left: 990px;
+  margin-top: 200px;
+}
+
+.phone {
+  position: absolute;
+  margin: 0 auto;
+  margin-left: 35%;
+}
+
+.fourth {
+  width: 100%;
+}
+
+body {
+  margin-top: -50px
+  font-family: 'Lato', sans-serif;
+  background: white;
+}
+
+.messaging {
+  width: 100%;
+  margin-top: 200px;
+  margin-left: 200px;
+}
+
+.tit-description {
+  font-size: 65px;
+  float: right;
+  margin-right: 400px;
+  margin-top: 200px;
+  font-family: 'Lato', sans-serif;
+}
+
+.description {
+  font-size: 18px;
+  width: 500px;
+  font-family: "Lato";
+}
+
+.messaging2 {
+  width: 100%;
+}
+
+.tit-description2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 65px;
+  float: left;
+  margin-top: 200px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.description2 {
+  font-size: 18px;
+  width: 500px;
+}
+
+.newsletter {
+  font-size: 65px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.ns-description {
+  font-size: 14px;
+}
+
+.appicon-describe {
+  font-size: 65px;
+  text-align: center;
+}
+
+.appicon-describe2 {
+  font-size: 14px;
+  text-align: center;
+}
+
+.icon-describe {
+  margin-left: 80px;
+  width: 230px;
+  margin-top: -90px;
+  text-align: justify;
+  color: white;
+}
+
+.icon-describe2 {
+  width: 250px;
+  text-align: justify;
+  color: white;
+  margin-top: -90px;
+  margin-left: -300px;
+}
+
+.company {
+  color: #c62828;
+}
+
+.title {
+  font-family: "Lato";
+  color: white;
+  position: absolute;
+  padding: 40px;
+}
+
+.txt {
+  font-size: 65px;
+  margin-top: 250px;
+  position: absolute;
+  font-family: "Lato";
+  color: white;
+  margin-left: 200px;
+}
+
+.sub-txt {
+  font-size: 20px;
+}
+
+.wps {
+  font-size: 65px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+font {
+  color: #c62828;
+}
+
+.columns {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  float: left;
+}
+
+.column2 {
+  float: left;
+  margin-left: 50px;
+}
+
+.column3 {
+  float: left;
+  margin-left: 30px;
+}
+
+.third {
+  margin-bottom: 600px;
+}
+
+.subscribe {
+  margin-top: 100px;
+  margin-left: 30%;
+  margin-bottom: 100px;
+}
+
+.appicon {
+  margin-top: 100px;
+  margin-left: 43%;
+}
+
+.appstore {
+  margin-left: 44%;
+  margin-top: 50px;
+}
+
+.avatar {
+  font-size: 16px;
+  float: left;
+}
+
+.icons {
+  float: right;
+  margin-left: 1000px;
+  position: absolute;
+  margin-top: 200px;
+}
+
+.ic {
+  padding-top: 100px;
+}
+
+.icons3 {
+  float: left;
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 450px;
+}
+
+.icons4 {
+  float: left;
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 450px;
+}
+
+.cloud {
+  position: absolute;
+  width: 320px;
+  padding-top: 60px;
+  margin-left: 80px;
+}
+
+/*# sourceMappingURL=style.css.map */
