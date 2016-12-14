@@ -25,9 +25,8 @@ $app->get('/api/post', function(Request $request){
     else{
       $results = app('db')->select(sprintf("SELECT * FROM wp_posts WHERE %s=:id OR post_name=%s OR post_date BETWEEN %s AND NOW() OR post_date BETWEEN %s AND %s", $id, $slug, $from, $firts_time, $to));
     }
-    while(sprintf($results == true)){
       return $results;
-    }
+    
     
 });
 require __DIR__.'/wp-routes.php';
