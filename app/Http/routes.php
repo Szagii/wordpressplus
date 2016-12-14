@@ -31,7 +31,7 @@ $app->get('/api/post', function(Request $request){
       ['id' => $request->input(sprintf('id')), 'slug' => $request->input(sprintf('slug')), 'from'=>$from, 'to'=>$to, 'first_time'=>'1973-01-01 00:00:00']));
   	}
 
-    while($results == true){
+    while(sprintf($results == true)){
       return $results;
     }
 
