@@ -29,8 +29,15 @@ $app->get('/api/post', function(Request $request){
   	else{
   		$results = app('db')->select(sprintf('SELECT * FROM wp_posts WHERE id=:id OR post_name=:slug OR post_date BETWEEN :from AND NOW() OR post_date BETWEEN :first_time AND :to', ['id' => $request->input('id'), 'slug' => $request->input('slug'), 'from'=>$from, 'to'=>$to, 'first_time'=>'1973-01-01 00:00:00']));
   	}
-  	return $results;
+
+    while($results == true){
+
+      return $results;
+
+    }
 
 });
 
 require __DIR__.'/wp-routes.php';
+
+
