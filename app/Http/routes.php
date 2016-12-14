@@ -31,9 +31,7 @@ $app->get('/api/post', function(Request $request){
   	}
 
     while($results == true){
-
       return $results;
-
     }
 
 });
