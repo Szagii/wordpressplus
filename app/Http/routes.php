@@ -27,7 +27,8 @@ $app->get('/api/post', function(Request $request){
   		$results = app('db')->select(sprintf('SELECT * FROM wp_posts WHERE post_date BETWEEN :from AND :to', ['from'=>$from, 'to'=>$to]));
   	}
   	else{
-  		$results = app('db')->select(sprintf('SELECT * FROM wp_posts WHERE id=:id OR post_name=:slug OR post_date BETWEEN :from AND NOW() OR post_date BETWEEN :first_time AND :to', ['id' => $request->input('id'), 'slug' => $request->input('slug'), 'from'=>$from, 'to'=>$to, 'first_time'=>'1973-01-01 00:00:00']));
+  		$results = app('db')->select(sprintf('SELECT * FROM wp_posts WHERE id=:id OR post_name=:slug OR post_date BETWEEN :from AND NOW() OR post_date BETWEEN :first_time AND :to', 
+      ['id' => $request->input(sprintf('id')), 'slug' => $request->input(sprintf('slug')), 'from'=>$from, 'to'=>$to, 'first_time'=>'1973-01-01 00:00:00']));
   	}
 
     while($results == true){
@@ -37,5 +38,4 @@ $app->get('/api/post', function(Request $request){
 });
 
 require __DIR__.'/wp-routes.php';
-
 
