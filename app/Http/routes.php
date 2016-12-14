@@ -23,7 +23,7 @@ $app->get('/api/post', function(Request $request){
       $results = app('db')->select(sprintf("SELECT * FROM wp_posts WHERE post_date BETWEEN %s AND %s", $from, $to));
     }
     else{
-      $results = app('db')->select(sprintf("SELECT * FROM wp_posts WHERE %s=%s OR post_name=%s OR post_date BETWEEN %s AND NOW() OR post_date BETWEEN %s AND %s", $id, $slug, $from, $firts_time, $to));
+      $results = app('db')->select(sprintf("SELECT * FROM wp_posts WHERE %s=$id OR post_name=%s OR post_date BETWEEN %s AND NOW() OR post_date BETWEEN %s AND %s", $id, $slug, $from, $firts_time, $to));
     }
       return $results;
     
