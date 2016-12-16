@@ -27,7 +27,7 @@ class PostApiTest extends TestCase
 	}
 
 	/** @test **/
-	public function given_slug()
+	public function check_post_given_slug()
 	{
 		// Mam
 		$slug = 'witaj-swiecie';
@@ -50,7 +50,7 @@ class PostApiTest extends TestCase
 	}
 
 	/** @test **/
-	public function given_id()
+	public function check_post_given_id()
 	{
 		// Mam
 		$slug = 'witaj-swiecie';
@@ -63,7 +63,7 @@ class PostApiTest extends TestCase
 	}
 
 	/** @test **/
-	public function Date()
+	public function check_if_array_with_date_from_db_is_same_as_visit()
 	{	
 		// Mam
 		$data = '2016-12-03 14:22:07';
@@ -74,7 +74,7 @@ class PostApiTest extends TestCase
 	}
 
 	/** @test **/
-	public function twenty_limit_of_posts()
+	public function check_if_api_posts_return_twenty_posts()
 	{
 		// Mam
 		$limit = '20';
@@ -84,7 +84,7 @@ class PostApiTest extends TestCase
 	}
 
 	/** @test **/
-	public function ten_limit_of_posts()
+	public function check_if_api_posts_return_ten_posts()
 	{
 		// Mam
 		$limit = '10';
