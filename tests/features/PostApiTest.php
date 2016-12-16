@@ -76,6 +76,7 @@ class PostApiTest extends TestCase
 	/** @test **/
 	public function twenty_limit_of_posts()
 	{
+		// Mam
 		$limit = '20';
 		$number = app('db')->select("SELECT * FROM wp_posts LIMIT $limit");
 		// Wyświetlam wpis, wiedząc, że jest w bazie danych
@@ -85,6 +86,7 @@ class PostApiTest extends TestCase
 	/** @test **/
 	public function ten_limit_of_posts()
 	{
+		// Mam
 		$limit = '10';
 		$number = app('db')->select("SELECT * FROM wp_posts LIMIT $limit");
 		// Wyświetlam wpis, wiedząc, że jest w bazie danych
