@@ -17,16 +17,16 @@ class PostApiTest extends TestCase
 	public function check_if_slug_exist_in_db()
 	{	
 		// Mam
-		$slug = 'witaj-swiecie';
+		$slug = 'przykladowa-strona';
 		// Sprawdzam czy jest w bazie
 		$this->seeInDatabase( 'wp_posts', ['post_name' => $slug] );
-		$data = app('db')->select("SELECT * FROM wp_posts WHERE ID = 1");
+		$data = app('db')->select("SELECT * FROM wp_posts WHERE ID = 2");
 	}
 	/** @test **/
 	public function check_post_given_slug()
 	{
 		// Mam
-		$slug = 'witaj-swiecie';
+		$slug = 'przykladowa-strona';
 		$posts = app('db')->select("SELECT * FROM wp_posts WHERE post_name ='{$slug}'");
 		// Wyświetlam wpis, wiedząc, że jest w bazie danych
 		$this->visit('/api/post?slug=' . $slug);
@@ -38,19 +38,19 @@ class PostApiTest extends TestCase
 	public function check_if_id_exist_in_db()
 	{
 		// Mam
-		$id = 1;
+		$id = 2;
 		// Sprawdzam czy jest w bazie
 		$this->seeInDatabase('wp_posts', ['ID' => $id]);
-		$data = app('db')->select("SELECT * FROM wp_posts WHERE ID=1");
+		$data = app('db')->select("SELECT * FROM wp_posts WHERE ID=2");
 	}
 	/** @test **/
 	public function check_post_given_id()
 	{
 		// Mam
-		$slug = 'witaj-swiecie';
+		$slug = 'przykladowa-strona';
 		$id = app('db')->select("SELECT * FROM wp_posts WHERE id='{slug}'");
 		// Wyświetlam wpis, wiedząc, że jest w bazie danych
-		$this->visit('/api/post?id=1');
+		$this->visit('/api/post?id=2');
 		// Zwracanie na ekran treść wpisu ale jednocześnie wpis musi być w bazie
 		$this->assertNotNull($id);
 		$this->see($slug);
@@ -83,4 +83,42 @@ class PostApiTest extends TestCase
 		// Wyświetlam wpis, wiedząc, że jest w bazie danych
 		$this->visit('/api/posts/10', $number);
 	}
+
+	/** @test **/
+	public function chceck_if_post_is_deleted()
+	{
+		// Mam
+		$id = '1';
+		// Wyświetlam wpis, wiedząc, że jest w bazie danych
+		$this->visit('/api/deletepost?id='.$id);
+	}
+
+	/** @test **/
+	public function chceck_if_post_is_added() 
+	{
+		// Mam
+		$content = 'testowy-wpis-phpunit';
+		$title = 'tytul-testowy-phpunit';
+		$name = 'testowy-post-name-phpunit';
+		// Wyświetlam wpis, wiedząc, że jest w bazie danych
+		$this->visit('/api/addpost?title='.$content.'&content='.$title.'&post_name='.$name.'');
+	}
+	
+	/** @test **/
+	public function chceck_if_post_is_updated() 
+	{
+		$id = '91';
+		$content = 'test-phpunit';
+		$title = 'test-phpunit';
+		$name = 'test-phpunit';
+		$this->visit('/api/editpost?id='.$id.'&content='.$content.'&title='.$title.'&post_name='.$name.'');
+		$this->seeInDatabase('wp_posts', ['post_name' => 'test-phpunit', 'post_title' => 'test-phpunit', 'post_content' => 'test-phpunit']);
+		$this->visit('/api/editpost?id='.$id.'&content=test-phpunit1');
+		$this->seeInDatabase('wp_posts', ['post_content' => 'test-phpunit1']);
+		$this->visit('/api/editpost?id='.$id.'&title=test-phpunit2');
+		$this->seeInDatabase('wp_posts', ['post_title' => 'test-phpunit2']);
+		$this->visit('/api/editpost?id='.$id.'&post_name=test-phpunit3');
+		$this->seeInDatabase('wp_posts', ['post_name' => 'test-phpunit3']);
+	}
+
 }
