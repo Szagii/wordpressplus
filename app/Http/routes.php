@@ -23,15 +23,25 @@ $app->get('/api/posts', function(){
 
 $app->get('/api/deletepost', function(Request $request){
   $id = $request->input('id');
-  $results = app('db')->delete('DELETE * FROM wp_posts WHERE ID = :ID', ['ID' => $id]);
-  return $results;
+
+  switch(true){
+    case ($request->input('id')):
+      $results = app('db')->delete('delete from wp_posts WHERE ID = :ID', ['ID' => $id]);
+      return $results;  
+    break; 
+}
 });
 
 $app->get('/api/addpost', function(Request $request){
   $title = $request->input('title');
   $content = $request->input('content');
   $post_name = $request->input("post_name");
-  $results = app('db')->insert("INSERT INTO wp_posts (post_content, post_title, post_name) VALUES (:content, :title, :name)", ['content' => $content, 'title' => $title, 'name' => $post_name]);
+
+  switch(true){
+    case ($request->input('title') && $request->input('content') && $request->input('post_name')):
+      $results = app('db')->insert("INSERT INTO wp_posts (post_content, post_title, post_name) VALUES (:content, :title, :name)", ['content' => $content, 'title' => $title, 'name' => $post_name]);
+    break; 
+  }
 });
 
 
@@ -57,6 +67,7 @@ $app->get('/api/editpost', function(Request $request){
       $results = app('db')->update("UPDATE wp_posts SET post_name = :post_name WHERE ID = :id", ['post_name' => $post_name, 'id' => $id]);
     }
   });
+
 
 $app->get('/api/post', function(Request $request){
   $from = $request->input('from');
