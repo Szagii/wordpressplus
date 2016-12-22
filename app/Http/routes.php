@@ -54,15 +54,15 @@ $app->get('/api/editpost', function(Request $request){
     {
       $results = app('db')->update("UPDATE wp_posts SET post_title = :post_title, post_name = :post_name, post_content = :post_content WHERE ID = :id", ['post_name' => $post_name, 'post_content' => $content, 'post_title' => $title, 'id' => $id]);
     }
-    if(isset($content) && $id)
+    if(isset($content) && isset($id))
     {
     $results = app('db')->update("UPDATE wp_posts SET post_content = :post_content WHERE ID = :id", ['post_content' => $content, 'id' => $id]);
     }
-    if(isset($title) && $id)
+    if(isset($title) && isset($id))
     {
     $results = app('db')->update("UPDATE wp_posts SET post_title = :post_title WHERE ID = :id", ['post_title' => $title, 'id' => $id]);   
     }
-    if(isset($post_name) && $id)
+    if(isset($post_name) && isset($id))
     {
       $results = app('db')->update("UPDATE wp_posts SET post_name = :post_name WHERE ID = :id", ['post_name' => $post_name, 'id' => $id]);
     }
